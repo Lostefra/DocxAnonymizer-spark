@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Basic_err1" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="docxAnonymizer.Main" />
+    <module name="DocxAnonymizer" />
+    <option name="PROGRAM_PARAMETERS" value="-i demo/getStarted-basic/getStarted-basic.docx -m demo/getStarted-basic/err1/m -kn demo/getStarted-basic/err1/kn -p -d" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="WebForm_dict" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="docxAnonymizer.Main" />
+    <module name="DocxAnonymizer" />
+    <option name="PROGRAM_PARAMETERS" value="-i demo/getStarted-webForm/getStarted-webForm.docx -p -d" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

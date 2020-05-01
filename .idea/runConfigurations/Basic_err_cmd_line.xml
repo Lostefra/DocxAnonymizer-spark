@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Basic_err-cmd-line" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="docxAnonymizer.Main" />
+    <module name="DocxAnonymizer" />
+    <option name="PROGRAM_PARAMETERS" value="-i demo/getStarted-basic/getStarted-basic.docx -p -d Giancarlo;Sibari &quot;Filiberto De Luca&quot; Carlo;Pluto &quot;Federico;De Nicola&quot; Francesco;Paolo Antonio;Franco Antonio:Andrea;Luca !Francesco;Antonio Lorenzo:Mario;Amorosa &quot;Carmine;de Rosa&quot; &quot;Niccolò;Dell’Uva&quot;" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
