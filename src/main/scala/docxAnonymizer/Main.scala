@@ -371,7 +371,7 @@ object Main extends App {
     // TODO REMOVE DAI PARAMETRI DI INPUT "elab" => SERVE SOLO PER SPERIMENTAZIONE SPARK MOCK !!!!!
     val worker = new Worker(elab, s_preMinimization, elab.getPlainTexts(), elab.getPersone(), elab.getKeepUnchanged(), elab.getToKeepViaConfig())
     val s_postMinimization = worker.work
-    // TODO DECOMMENTARE QUESTA RIGA, NON SERVE NELLA VERSIONE MOCK SPARK SEQUENZIALE, SERVE IN VERSIONE PARALLELA !!!
+    // TODO DECOMMENTARE QUESTA RIGA, NON SERVE NELLA VERSIONE MOCK SPARK SEQUENZIALE, SERVE IN VERSIONE PARALLELA !!!!
     //elab.postprocess(s_postMinimization)
   }
   else elab.work()

@@ -22,7 +22,7 @@ class Worker(val elab:Elaborator,
         println("start work")
         elab.work()
         println("end work")
-        //TODO rimuovere CALCOLO DI PI GRECO, MESSO COME MOCK
+        //TODO rimuovere CALCOLO DI PI GRECO, MESSO COME MOCK !
         val n = math.min(100000L * 2, Int.MaxValue).toInt // avoid overflow
         val count = spark.parallelize(1 until n, 2).map { i =>
             val x = random * 2 - 1
