@@ -367,18 +367,12 @@ object Main extends App {
   else elab = new Elaborator(runNodes, persone, keepUnchanged)
 
   if(parallel) {
-    //TODO START
-    //TODO TO REMOVE 4 COMMENTS
-    println("remove 4 comments")
-    //val s_preMinimization = elab.preprocess()
-    //val worker = new Worker(s_preMinimization, elab.getPlainTexts(), elab.getPersone(), elab.getKeepUnchanged(), elab.getToKeepViaConfig())
-    //val s_postMinimization = worker.work
+    val s_preMinimization = elab.preprocess()
+    // TODO REMOVE DAI PARAMETRI DI INPUT "elab" => SERVE SOLO PER SPERIMENTAZIONE SPARK MOCK !!!!!
+    val worker = new Worker(elab, s_preMinimization, elab.getPlainTexts(), elab.getPersone(), elab.getKeepUnchanged(), elab.getToKeepViaConfig())
+    val s_postMinimization = worker.work
+    // TODO DECOMMENTARE QUESTA RIGA, NON SERVE NELLA VERSIONE MOCK SPARK SEQUENZIALE, SERVE IN VERSIONE PARALLELA !!!
     //elab.postprocess(s_postMinimization)
-
-    //TODO TO REMOVE
-    println("remove line: elab.work()")
-    elab.work()
-    //TODO END HERE
   }
   else elab.work()
 

@@ -2,20 +2,36 @@ package docxAnonymizer
 
 import java.util
 
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.{SparkConf, SparkContext}
+import scala.math.random
 
-class Worker(val s_preMinimization: util.List[java.lang.StringBuilder],
+class Worker(val elab:Elaborator,
+             val s_preMinimization: util.List[java.lang.StringBuilder],
              val plainTexts: PlainTexts,
              val persone: util.List[Persona],
              val keepUnchanged: util.List[Persona],
              val keepViaConfig: String) {
 
     //TODO sparkSession etc. , verificare classe necessaria
-    private val sparkSession = SparkSession.builder().getOrCreate()
+    private val spark = new SparkContext(new SparkConf().setAppName("Docx Anonymzer"))
     private val s_postMinimization = new util.ArrayList[java.lang.StringBuilder]
 
     def work() : util.List[java.lang.StringBuilder] = {
         //TODO WORK METHOD: alcune delle variabili necessarie sono state gia' passate al costruttore
+        // TODO RIMUOVERE ELAB.WORK ==> E' LA VERSIONE SEQUENZIALE
+        println("start work")
+        elab.work()
+        println("end work")
+        //TODO rimuovere CALCOLO DI PI GRECO, MESSO COME MOCK
+        val n = math.min(100000L * 2, Int.MaxValue).toInt // avoid overflow
+        val count = spark.parallelize(1 until n, 2).map { i =>
+            val x = random * 2 - 1
+            val y = random * 2 - 1
+            if (x*x + y*y < 1) 1 else 0
+        }.reduce(_ + _)
+        println("Print 6: Pi is roughly " + 4.0 * count / n)
+        // TODO ok se .stop() messo qui prima del return di s_postMinimization?
+        spark.stop()
       /*
     val tmp: String = null
     val curr_entryPoints: util.List[EntryPoint] = null
