@@ -217,7 +217,9 @@ object Main extends App {
         if (argument.matches(Persona.NOMINATIVO_USER)) {
           nomiString = argument.split(Pattern.quote(";"))(0)
           cognome = argument.split(Pattern.quote(";"))(1)
-          nomi = util.List.of(nomiString.split(Pattern.quote(":")):_*)
+          //nomi = util.List.of(nomiString.split(Pattern.quote(":")):_*)
+          //TODO elimina riga precedente
+          nomi = util.Arrays.asList(nomiString.split(Pattern.quote(":")):_*)
           if (nomi.size > 10)
             println("WARNING: sono inseribili un massimo di 10 nomi per persona, non minimizzo i dati"
               + " della persona con cognome: " + cognome + ". Procedo con l'elaborazione.")
@@ -267,7 +269,9 @@ object Main extends App {
         if (argument.matches(Persona.NOMINATIVO_USER)) {
           nomiString = argument.split(Pattern.quote(";"))(0).replaceAll("!", "")
           cognome = argument.split(Pattern.quote(";"))(1)
-          nomi = util.List.of(nomiString.split(Pattern.quote(":")):_*)
+          //nomi = util.List.of(nomiString.split(Pattern.quote(":")):_*)
+          //TODO elimina riga precedente
+          nomi = util.Arrays.asList(nomiString.split(Pattern.quote(":")):_*)
           if (nomi.size > 10)
             println("WARNING: sono inseribili un massimo di 10 nomi per persona, non minimizzo i dati"
               + " della persona con cognome: " + cognome + ". Procedo con l'elaborazione.")
