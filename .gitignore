@@ -1,0 +1,6 @@
+/target/
+/project/target/
+/project/project/
+/.idea/modules/
+/.idea/libraries/
+/.idea/.gitignore
