@@ -337,13 +337,13 @@ object Main {
                     if (debug) println(s"Success! Output file: $outputFilePath uploaded to S3 bucket")
                 }
                 val freqFile = new File("frequencies.txt")
-                Try(s3Client.orNull.putObject(bucketName, "frequencies.txt", freqFile)) match {
+                Try(s3Client.orNull.putObject(bucketName, Paths.get(exportFile.getParent, "frequencies.txt").toString, freqFile)) match {
                   case Failure(_: AmazonS3Exception) => return Left("could not upload file to S3 bucket")
                   case Success(_) =>
                     if (debug) println("Success! Output file: 'frequencies.txt' uploaded to S3 bucket")
                 }
                 val assocFile = new File("associations.txt")
-                Try(s3Client.orNull.putObject(bucketName, "associations.txt", assocFile)) match {
+                Try(s3Client.orNull.putObject(bucketName, Paths.get(exportFile.getParent, "associations.txt").toString, assocFile)) match {
                   case Failure(_: AmazonS3Exception) => return Left("could not upload file to S3 bucket")
                   case Success(_) =>
                     if (debug) println("Success! Output file: 'associations.txt' uploaded to S3 bucket")
