@@ -4,3 +4,4 @@
 /.idea/modules/
 /.idea/libraries/
 /.idea/.gitignore
+/src/main/resources/config/iam_credentials.txt
